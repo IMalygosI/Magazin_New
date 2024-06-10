@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AvaloniaProject">
+    <option name="projectPerEditor">
+      <map>
+        <entry key="Magazin_New/App.axaml" value="Magazin_New/Magazin_New.csproj" />
+        <entry key="Magazin_New/Dobavit.axaml" value="Magazin_New/Magazin_New.csproj" />
+        <entry key="Magazin_New/MainWindow.axaml" value="Magazin_New/Magazin_New.csproj" />
+        <entry key="Magazin_New/Redact.axaml" value="Magazin_New/Magazin_New.csproj" />
+        <entry key="Magazin_New/admin.axaml" value="Magazin_New/Magazin_New.csproj" />
+        <entry key="Magazin_New/bagodarim.axaml" value="Magazin_New/Magazin_New.csproj" />
+        <entry key="Magazin_New/basket.axaml" value="Magazin_New/Magazin_New.csproj" />
+        <entry key="Magazin_New/error.axaml" value="Magazin_New/Magazin_New.csproj" />
+        <entry key="Magazin_New/error2.axaml" value="Magazin_New/Magazin_New.csproj" />
+        <entry key="Magazin_New/user.axaml" value="Magazin_New/Magazin_New.csproj" />
+      </map>
+    </option>
+  </component>
+</project>

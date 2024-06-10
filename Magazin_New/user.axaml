@@ -1,0 +1,79 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="Magazin_New.user" x:CompileBindings="False"
+        Title="user"
+        MaxWidth="1280" MaxHeight="854" MinWidth="1280" MinHeight="854"
+        WindowStartupLocation="CenterScreen">
+	<Window.Background>
+		<ImageBrush Source="./Assets/image.jpg"/>
+	</Window.Background>
+	
+	<Panel>
+		<Button Name="exit"  Margin="0,0,0,750" 
+		        Foreground="Black" Height="50" Width="145"
+		        HorizontalAlignment="Right" VerticalAlignment="Center" CornerRadius="23">
+			<TextBlock Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="21">
+				exit
+			</TextBlock>
+		</Button>
+		<Button Name="in_korz"  Margin="0,0,150,750" 
+		        Foreground="Black" Height="50" Width="145"
+		        HorizontalAlignment="Right" VerticalAlignment="Center" CornerRadius="23">
+			<TextBlock Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="21">
+				Корзина
+			</TextBlock>
+		</Button>
+		<TextBox Name="name" Width="900" Height="45" Margin="0 0 200 580" CornerRadius="11"
+		         Watermark="Название товара" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="21">
+			
+		</TextBox>
+		<Button Name="name_button" Classes="name_button" Margin="0,0,100,580" 
+		        Background="#CC5801" Height="45" Width="185"
+		        HorizontalAlignment="Right" VerticalAlignment="Center" CornerRadius="11">
+			<TextBlock Foreground="White" HorizontalAlignment="Center"
+			           VerticalAlignment="Center" FontSize="21">Найти</TextBlock>
+		</Button>
+		<ListBox Height="500" Width="900" Margin="0 30 0 0" CornerRadius="23"
+				 x:Name="AAA">
+			<ListBox.ItemTemplate>
+				<DataTemplate>
+					<Border
+						BorderThickness="2"
+						CornerRadius="9"						
+						BorderBrush="Black">
+						<Grid ShowGridLines="False">
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="0.1*" />
+								<ColumnDefinition Width="0.3*" />
+								<ColumnDefinition Width="0.088*" />
+							</Grid.ColumnDefinitions>
+							<Grid.RowDefinitions>
+								<RowDefinition Height="170"></RowDefinition>
+								<RowDefinition Height="Auto"></RowDefinition>
+								<RowDefinition Height="Auto"></RowDefinition>
+							</Grid.RowDefinitions>
+							
+							<Image VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0"
+								   Width="150" Height="250" Source="{Binding image}"></Image>
+							<TextBlock Text="Название:" HorizontalAlignment="Left" FontWeight="Black"
+									   VerticalAlignment="Top" Grid.Column="1"/>
+							<TextBlock Text="{Binding ProductName}" HorizontalAlignment="Center" 
+									   VerticalAlignment="Top" Grid.Column="1"/>
+							<TextBlock Text="Цена:"  HorizontalAlignment="Right" Margin="0 0 0 0" FontWeight="Black"
+									   VerticalAlignment="Top" Grid.Column="1"/>						
+							<TextBlock Text="{Binding PraiseProduct}" HorizontalAlignment="Left" Margin="0 1 0 0"
+									   VerticalAlignment="Top" Grid.Column="2" TextWrapping="Wrap"/>
+							<Button Background="#CC5801" Tag="{Binding Id}" HorizontalAlignment="Center" Margin="0 20 0 65" Height="30" Width="150"
+									   VerticalAlignment="Center"	Grid.Column="2" Click="basket" Name="basket" Classes="inkorzB">
+								<TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White">В корзину</TextBlock>
+							</Button>
+						</Grid>
+					</Border>
+				</DataTemplate>
+			</ListBox.ItemTemplate>
+		</ListBox>
+		</Panel>
+</Window>

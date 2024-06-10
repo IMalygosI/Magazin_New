@@ -1,0 +1,92 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="Magazin_New.basket" x:CompileBindings="False" 
+        Title="basket"
+        MaxWidth="1200" MaxHeight="700" MinWidth="1200" MinHeight="700"
+        Background="Transparent"
+        WindowStartupLocation="CenterScreen"
+        TransparencyLevelHint="AcrylicBlur">
+	<Panel>
+		<ExperimentalAcrylicBorder IsHitTestVisible="False">
+			<ExperimentalAcrylicBorder.Material>
+				<ExperimentalAcrylicMaterial
+                    BackgroundSource="Digger"
+                    TintColor="Black"
+                    TintOpacity="1"
+                    MaterialOpacity="0.15" />
+			</ExperimentalAcrylicBorder.Material>
+		</ExperimentalAcrylicBorder>
+		
+		<TextBlock Text="Количество:"  HorizontalAlignment="Right" Margin="0,65,105,0" 
+		           FontWeight="Black" VerticalAlignment="Top" Foreground="White"></TextBlock>
+		<TextBlock  FontSize="20" HorizontalAlignment="Right" Margin="0,62,5,0"
+		            Foreground="White" VerticalAlignment="Top" 
+		            x:Name="Colvo" Text="0"></TextBlock>		
+		<TextBlock Text="Общая цена:" HorizontalAlignment="Right" Margin="0,85,105,0"
+		           Foreground="White" FontWeight="Black" VerticalAlignment="Top"></TextBlock>
+		<TextBlock FontSize="20" HorizontalAlignment="Right" Margin="0,82,5,0" 
+		           Foreground="White" VerticalAlignment="Top" 
+		           x:Name="Summa" Text="0"></TextBlock>
+
+		<Button Click="Oplata" Name="Oplata1" Margin="0,105,15,0" Foreground="White" 
+		        Height="30" Width="120" Background="#CC5801" Classes="Oplata1"
+                HorizontalAlignment="Right" VerticalAlignment="Top" CornerRadius="10">
+			<StackPanel>
+				<TextBlock Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"
+				           FontSize="13" FontWeight="DemiBold" Text="Оплата">
+				</TextBlock>
+			</StackPanel>
+		</Button>		
+		<Button Name="exitA" Margin="0,5,5,0" Foreground="Black" Height="52" Width="52"
+                HorizontalAlignment="Right" VerticalAlignment="Top" CornerRadius="10">
+			<StackPanel>
+				<Image Source="./Assets/exit.jpg"
+                       Height="40" Width="40" Margin="0 0 0 0"/>
+				<TextBlock Foreground="White" HorizontalAlignment="Center"
+                           VerticalAlignment="Center" FontSize="13" FontWeight="DemiBold">
+				</TextBlock>
+			</StackPanel>
+		</Button>
+		<TextBlock Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="23"
+                    Margin="0 -300 0 0">
+			Корзина
+		</TextBlock>
+		<ListBox Height="500" Width="900" Margin="0 30 0 0" CornerRadius="23" x:Name="AA">
+			<ListBox.ItemTemplate>
+				<DataTemplate>
+					<Border	BorderThickness="2" CornerRadius="9" BorderBrush="Black">
+						<Grid ShowGridLines="False">
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="0.1*" />
+								<ColumnDefinition Width="0.3*" />
+								<ColumnDefinition Width="0.088*" />
+							</Grid.ColumnDefinitions>
+							<Grid.RowDefinitions>
+								<RowDefinition Height="170"></RowDefinition>
+								<RowDefinition Height="Auto"></RowDefinition>
+								<RowDefinition Height="Auto"></RowDefinition>
+							</Grid.RowDefinitions>
+							<Image VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0"
+								   Width="150" Height="250" Source="{Binding image}"></Image>
+							<TextBlock Text="Название:" HorizontalAlignment="Left" FontWeight="Black"
+									   VerticalAlignment="Top" Grid.Column="1"/>
+							<TextBlock Text="{Binding ProductName}" HorizontalAlignment="Center"
+									   VerticalAlignment="Top" Grid.Column="1"/>
+							<TextBlock Text="Цена:"  HorizontalAlignment="Right" Margin="0 0 0 0" FontWeight="Black"
+									   VerticalAlignment="Top" Grid.Column="1"/>
+							<TextBlock Text="{Binding PraiseProduct}" HorizontalAlignment="Left" Margin="0 1 0 0"
+									   VerticalAlignment="Top" Grid.Column="2" TextWrapping="Wrap"/>							
+							<Button Background="#CC5801" Tag="{Binding Id}" HorizontalAlignment="Center" Height="30" Width="150" Margin="0 20 0 0"
+									   VerticalAlignment="Center" Grid.Column="2" Click="Ubrat2" Name="Ubrat2">
+								<TextBlock  VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White">Удалить</TextBlock>
+							</Button>
+						</Grid>
+					</Border>
+				</DataTemplate>
+			</ListBox.ItemTemplate>
+		</ListBox>		
+	</Panel>
+</Window>

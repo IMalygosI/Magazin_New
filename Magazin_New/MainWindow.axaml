@@ -1,0 +1,40 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="1350" d:DesignHeight="900"
+        x:Class="Magazin_New.MainWindow"
+        Title="Magazin_New"
+        MaxWidth="1350" MaxHeight="900" MinWidth="1350" MinHeight="900"
+        WindowStartupLocation="CenterScreen" >
+    <Window.Background>
+        <ImageBrush Source="./Assets/image.jpg"/>
+    </Window.Background>
+    <Panel>
+        <StackPanel Margin="0 140 0 0" HorizontalAlignment="Center">
+            <TextBlock FontSize="23">
+                Sign in
+            </TextBlock>
+        </StackPanel>
+        <Border Background="#CC5801" Height="255" Width="300" HorizontalAlignment="Center"
+                VerticalAlignment="Center" CornerRadius="11"
+                Margin="0 0 0 0" >
+            <StackPanel>
+                <TextBlock Margin="10 15 0 0" FontSize="19" Foreground="White">login</TextBlock>
+
+                <TextBox Name="name" Watermark="Login" Text="" Background="White" Height="30" Width="280" CornerRadius="6" Margin="0 10 0 0"></TextBox>
+
+                <TextBlock Margin="10 20 0 0" FontSize="19" Foreground="White" >Password</TextBlock>
+
+                <TextBox Name="parol" Watermark="Password" Text="" PasswordChar="*"  Background="White" Height="30" Width="280" CornerRadius="6" Margin="0 10 0 0"></TextBox>
+
+                <Button Name="sign" Foreground="White" Background="Gray" Height="40" Width="280" Classes="sign1"
+                        Margin="0 25 0 0" HorizontalAlignment="Center" CornerRadius="11">
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White">
+                        Sign in
+                    </TextBlock>
+                </Button>
+            </StackPanel>
+        </Border>
+    </Panel>
+</Window>

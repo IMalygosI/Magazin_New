@@ -1,0 +1,33 @@
+<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="Magazin_New.App"
+             RequestedThemeVariant="Default">
+             <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
+    <Application.Styles>
+		<Style Selector="Button.Orange_button">
+			<Setter Property="Background" Value="#CC5801"/>
+			<Style Selector="^:pointerover /template/ContentPresenter">
+				<Setter Property="Background" Value="#CC5801"/>
+			</Style>
+		</Style>
+	    <Style Selector="Button.Gray_button">
+		    <Setter Property="Background" Value="Gray"/>
+		    <Style Selector="^:pointerover /template/ContentPresenter">
+			    <Setter Property="Background" Value="Gray"/>
+		    </Style>
+	    </Style>
+	    <Style Selector="Button.Otmen1">
+		    <Setter Property="Background" Value="DarkRed"/>
+		    <Style Selector="^:pointerover /template/ContentPresenter">
+			    <Setter Property="Background" Value="DarkRed"/>
+		    </Style>
+	    </Style>
+	    <Style Selector="Button.Postavka">
+		    <Setter Property="Background" Value="DarkGreen"/>
+		    <Style Selector="^:pointerover /template/ContentPresenter">
+			    <Setter Property="Background" Value="DarkGreen"/>
+		    </Style>
+	    </Style>
+        <FluentTheme />
+    </Application.Styles>
+</Application>

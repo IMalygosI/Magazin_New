@@ -1,0 +1,32 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="Magazin_New.bagodarim"
+        Title="bagodarim"
+        MaxWidth="1000" MaxHeight="500" MinWidth="1000" MinHeight="500"
+        Background="Transparent"
+        WindowStartupLocation="CenterScreen"
+        TransparencyLevelHint="AcrylicBlur">
+    <Panel>
+        <ExperimentalAcrylicBorder IsHitTestVisible="False">
+            <ExperimentalAcrylicBorder.Material>
+                <ExperimentalAcrylicMaterial
+                    BackgroundSource="Digger"
+                    TintColor="Black"
+                    TintOpacity="1"
+                    MaterialOpacity="0.15" />
+            </ExperimentalAcrylicBorder.Material>
+        </ExperimentalAcrylicBorder>
+        <TextBlock Text="Благодарим за покупу!" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 0 0 120"
+                   Foreground="White" FontSize="17"></TextBlock>
+        <Button Name="magazin" Height="70" Width="245" HorizontalAlignment="Center" CornerRadius="12"
+                VerticalAlignment="Center" Foreground="White" Background="#CC5801" Classes="magazin">
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock Foreground="White" FontSize="17" FontWeight="DemiBold" Text="Вернуться в магазин">
+                </TextBlock>
+            </StackPanel>
+        </Button>
+    </Panel>
+</Window>

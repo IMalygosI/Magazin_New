@@ -1,0 +1,33 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="Magazin_New.error2"
+        Title="error2"
+        MaxWidth="600" MaxHeight="150" MinWidth="600" MinHeight="150"
+        WindowStartupLocation="CenterScreen"
+        TransparencyLevelHint="AcrylicBlur">
+    <Panel>
+        <ExperimentalAcrylicBorder IsHitTestVisible="False">
+            <ExperimentalAcrylicBorder.Material>
+                <ExperimentalAcrylicMaterial
+                    BackgroundSource="Digger"
+                    TintColor="Black"
+                    TintOpacity="1"
+                    MaterialOpacity="0.15" />
+            </ExperimentalAcrylicBorder.Material>
+        </ExperimentalAcrylicBorder>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" 
+                   Foreground="White" Margin="0 0 0 80">
+            ОШИБКА! У вас нет товара для оплаты!
+        </TextBlock>
+        <Button Name="exit" Foreground="White" Background="Gray"
+                HorizontalAlignment="Center" VerticalAlignment="Center" 
+                Height="40" Width="200" Classes="Gray_button">
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" >
+                Закрыть
+            </TextBlock>
+        </Button>
+    </Panel>
+</Window>
