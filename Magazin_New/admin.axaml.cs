@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Avalonia;
@@ -256,32 +256,40 @@ public partial class admin : Window
     }
     public void Click_dobavit(object sender, RoutedEventArgs args)
     {
-        Dobavit taskWindow = new Dobavit();
-        taskWindow.Show();
-        this.Close();
+        if (ShopTab.SaveMagaz.korzinaa.Count == 0)
+        {
+            Dobavit taskWindow = new Dobavit();
+            taskWindow.Show();
+            this.Close();
+        }
     }
     public void udalit(object sender, RoutedEventArgs args)
     {
-        if (0 <= ShopTab.SaveMagaz.Product.Count - 1)
+        if (ShopTab.SaveMagaz.korzinaa.Count == 0)
         {
-            ShopTab.SaveMagaz.Product.RemoveAt((int)(sender as Button)!.Tag!);
-
-            for (int i = 0; i < ShopTab.SaveMagaz.Product.Count; i++)
+            if (0 <= ShopTab.SaveMagaz.Product.Count - 1)
             {
-                ShopTab.SaveMagaz.Product[i].Id = i;
+                ShopTab.SaveMagaz.Product.RemoveAt((int)(sender as Button)!.Tag!);
+                for (int i = 0; i < ShopTab.SaveMagaz.Product.Count; i++)
+                {
+                    ShopTab.SaveMagaz.Product[i].Id = i;
+                }
+                AAA.ItemsSource = ShopTab.SaveMagaz.Product.ToList();
             }
-            AAA.ItemsSource = ShopTab.SaveMagaz.Product.ToList();
+            ssil("");
+            FiltersTogether();
         }
-        ssil("");
-        FiltersTogether();
     }
     private void redact(object sender, RoutedEventArgs e)
     {
-        int m = (int)(sender as Button)!.Tag!;
-        ShopTab.massiv[0] = m;
-        Redact taskWindow = new Redact();
-        taskWindow.Show();
-        this.Close();
+        if (ShopTab.SaveMagaz.korzinaa.Count == 0)
+        {
+            int m = (int)(sender as Button)!.Tag!;
+            ShopTab.massiv[0] = m;
+            Redact taskWindow = new Redact();
+            taskWindow.Show();
+            this.Close();
+        }
     }
     public void basket(object sender, RoutedEventArgs args)
     {
