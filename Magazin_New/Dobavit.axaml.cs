@@ -88,12 +88,28 @@ public partial class Dobavit : Window
         Extensions = new System.Collections.Generic.List<string>() {"png", "jpg", "jpeg"},
         Name = "Файлы изображений"
     };
+    private void DeleteImage(string imageName)
+    {
+        bool isImageUsed = ShopTab.SaveMagaz.Product.Any(p => p.Sourse == imageName);// Проверяем, используется ли изображение в других продуктах
+        if (!isImageUsed)       
+        {
+            string filePath = Path.Combine("Asset", imageName);            
+            if (File.Exists(filePath))
+            {                
+                File.Delete(filePath); // Если изображение не используется, удаляем его
+            }        
+        }
+    }  
     private async void ImageSelection(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
         var button = (sender as Button)!;
         switch (button.Name)
         {
             case "btn_imgAdd":
+                if (!string.IsNullOrEmpty(SelectedImage))
+                {            
+                    DeleteImage(SelectedImage);
+                } 
                 OpenFileDialog dialog = new();
                 dialog.Filters.Add(fileFilter);
 
@@ -110,11 +126,18 @@ public partial class Dobavit : Window
                 break;
             case "btn_imgDel":
                 tblock_preview.IsVisible = img_preview.IsVisible = false;
-                SelectedImage = null;
+                if (!string.IsNullOrEmpty(SelectedImage))
+                {                    
+                    DeleteImage(SelectedImage);
+                }    
                 break;
         }
     }
     public void Click_Otmen(object sender, RoutedEventArgs args){
+        if (!string.IsNullOrEmpty(SelectedImage))
+        {            
+            DeleteImage(SelectedImage);
+        } 
         admin taskWindow = new admin();
         taskWindow.Show();
         this.Close();
