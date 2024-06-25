@@ -3,10 +3,9 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-        x:Class="Magazin_New.bagodarim"
-        Title="bagodarim"
-        MaxWidth="1000" MaxHeight="500" MinWidth="1000" MinHeight="500"
-        Background="Transparent"
+        x:Class="Magazin_New.error4"
+        Title="error4"
+        MaxWidth="600" MaxHeight="150" MinWidth="600" MinHeight="150"
         WindowStartupLocation="CenterScreen"
         TransparencyLevelHint="AcrylicBlur">
     <Panel>
@@ -19,14 +18,16 @@
                     MaterialOpacity="0.15" />
             </ExperimentalAcrylicBorder.Material>
         </ExperimentalAcrylicBorder>
-        <TextBlock Text="Благодарим за покупу!" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 0 0 120"
-                   Foreground="White" FontSize="17"></TextBlock>
-        <Button Name="magazin" Height="60" Width="245" HorizontalAlignment="Center" CornerRadius="12"
-                VerticalAlignment="Center" Foreground="White" Background="#CC5801" Classes="magazin">
-            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                <TextBlock Foreground="White" FontSize="17" FontWeight="DemiBold" Text="Закрыть">
-                </TextBlock>
-            </StackPanel>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" 
+                   Foreground="White" Margin="0 0 0 80">
+            ОШИБКА! Такой товар уже существует!
+        </TextBlock>
+        <Button Name="exit" Foreground="White" Background="Gray"
+                HorizontalAlignment="Center" VerticalAlignment="Center" 
+                Height="40" Width="200" Classes="Gray_button">
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" >
+                Закрыть
+            </TextBlock>
         </Button>
     </Panel>
 </Window>

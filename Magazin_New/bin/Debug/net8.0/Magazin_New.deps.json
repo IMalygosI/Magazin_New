@@ -9,6 +9,8 @@
       "Magazin_New/1.0.0": {
         "dependencies": {
           "Avalonia": "11.0.10",
+          "Avalonia.Angle.Windows.Natives": "2.1.0.2023020321",
+          "Avalonia.BuildServices": "0.0.29",
           "Avalonia.Desktop": "11.0.10",
           "Avalonia.Diagnostics": "11.0.10",
           "Avalonia.Fonts.Inter": "11.0.10",

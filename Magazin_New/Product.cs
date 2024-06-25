@@ -11,14 +11,31 @@ namespace Magaz
     {
         private string NameProduct;
         private double praiseProduct;
+        private string organaizProduct;
+        private string opisanieProduct;
+        private string typeProduct;
         private string sourse;
         private int ids = 0;
-        public Product(string Name, double Prise, int id, string Image_sourse)
+        private int colvo;
+        public Product(string Name, double Prise, int id, string Image_sourse, int count, string organiz, string type, string opisanie)
         {
             NameProduct = Name;
             praiseProduct = Prise;
             sourse = Image_sourse;
+            ids = id;
+            colvo = count;
+            opisanieProduct = opisanie;
+            organaizProduct = organiz;
+            typeProduct = type;
         }
+   
+            public Product Clone()
+            {
+                return new Product(NameProduct, praiseProduct, ids, sourse, colvo, organaizProduct, typeProduct, opisanieProduct);
+            }
+
+        
+
         public double PraiseProduct
         {
             get { return praiseProduct; }
@@ -29,10 +46,30 @@ namespace Magaz
             get { return NameProduct; }
             set { NameProduct = value; }
         }
+        public string OrganaizProduct
+        {
+            get { return organaizProduct; }
+            set { organaizProduct = value; }
+        }
+        public string OpisanieProduct
+        {
+            get { return opisanieProduct; }
+            set { opisanieProduct = value; }
+        }
+        public string TypeProduct
+        {
+            get { return typeProduct; }
+            set { typeProduct = value; }
+        }
         public int Id
         {
             get { return ids; }
             set { ids = value; }
+        }
+        public int ColvoProduct
+        {
+            get { return colvo; }
+            set { colvo = value; }
         }
         public string Sourse
         {

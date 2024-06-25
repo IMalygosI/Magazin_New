@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Magazin_New")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f9768940f7e5be0d162815ee1266d04a609160dd")]
 [assembly: System.Reflection.AssemblyProductAttribute("Magazin_New")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Magazin_New")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

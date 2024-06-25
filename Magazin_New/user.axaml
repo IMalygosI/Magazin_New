@@ -10,42 +10,71 @@
 	<Window.Background>
 		<ImageBrush Source="./Assets/image.jpg"/>
 	</Window.Background>
-	
 	<Panel>
-		<Button Name="exit"  Margin="0,0,0,750" 
-		        Foreground="Black" Height="50" Width="145"
+		<StackPanel>
+			<ComboBox Name="sotirovka2" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 77 410 0"
+			          Width="490" Height="45"  FontSize="21" SelectedIndex="0" CornerRadius="11" >
+				<ComboBoxItem FontSize="20">Производитель</ComboBoxItem>
+				<ComboBoxItem FontSize="20">ООО 'Олимп'</ComboBoxItem>
+				<ComboBoxItem FontSize="20">ООО 'Поклоняемся Солнцу!'</ComboBoxItem>
+				<ComboBoxItem FontSize="20">ООО 'Венера'</ComboBoxItem>
+				<ComboBoxItem FontSize="20">ООО 'ЯщеркиТехКорп'</ComboBoxItem>
+			</ComboBox>
+		</StackPanel>
+		<StackPanel>
+			<ComboBox Name="sotirovka3" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="490 77 0 0"
+			          Width="400" Height="45"  FontSize="21" SelectedIndex="0" CornerRadius="11" >
+				<ComboBoxItem FontSize="20">Тип продукта</ComboBoxItem>
+				<ComboBoxItem FontSize="20">Техника</ComboBoxItem>
+				<ComboBoxItem FontSize="20">Одежда</ComboBoxItem>
+				<ComboBoxItem FontSize="20">Продукты</ComboBoxItem>
+				<ComboBoxItem FontSize="20">Канцелярия</ComboBoxItem>
+			</ComboBox>
+		</StackPanel>
+		<StackPanel>
+			<TextBox Name="poisk" KeyUp="Searching" Text="" Width="490" Height="45" Margin="0 130 410 0" CornerRadius="11"
+			         Watermark="Название товара" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="21">
+			</TextBox>
+			<ComboBox Name="sotirovka" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="490 -46 0 0"
+			          Width="400" Height="45"  FontSize="21" SelectedIndex="0" CornerRadius="11" >
+				<ComboBoxItem FontSize="20">Цена</ComboBoxItem>
+				<ComboBoxItem FontSize="20">Цена по возрастанию</ComboBoxItem>
+				<ComboBoxItem FontSize="20">Цена по убывнию</ComboBoxItem>
+			</ComboBox>
+		</StackPanel>
+
+		<Button Name="exit"  Margin="0,0,0,650" 
+		        Foreground="Black" Height="40" Width="145"
 		        HorizontalAlignment="Right" VerticalAlignment="Center" CornerRadius="23">
 			<TextBlock Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="21">
 				exit
 			</TextBlock>
 		</Button>
-		<Button Name="in_korz"  Margin="0,0,150,750" 
-		        Foreground="Black" Height="50" Width="145"
+		<Button Name="in_korz"  Margin="0,0,10,750" 
+		        Foreground="Black" Height="40" Width="145"
 		        HorizontalAlignment="Right" VerticalAlignment="Center" CornerRadius="23">
 			<TextBlock Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="21">
 				Корзина
 			</TextBlock>
 		</Button>
-		<TextBox Name="name" Width="900" Height="45" Margin="0 0 200 580" CornerRadius="11"
-		         Watermark="Название товара" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="21">
-			
-		</TextBox>
-		<Button Name="name_button" Classes="name_button" Margin="0,0,100,580" 
-		        Background="#CC5801" Height="45" Width="185"
-		        HorizontalAlignment="Right" VerticalAlignment="Center" CornerRadius="11">
-			<TextBlock Foreground="White" HorizontalAlignment="Center"
-			           VerticalAlignment="Center" FontSize="21">Найти</TextBlock>
+		<Button Name="Reset" Margin="0,0,190,750"  Click="ResetSort"
+		        Background="#CC5801" Height="40" Width="250" Classes="Orange_button"
+		        HorizontalAlignment="Right" VerticalAlignment="Center" CornerRadius="13">
+			<TextBlock Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="21">
+				Сбросить сортировку
+			</TextBlock>
 		</Button>
+
 		<ListBox Height="500" Width="900" Margin="0 30 0 0" CornerRadius="23"
 				 x:Name="AAA">
 			<ListBox.ItemTemplate>
 				<DataTemplate>
-					<Border
-						BorderThickness="2"
-						CornerRadius="9"						
-						BorderBrush="Black">
+					<Border Background="{Binding Color}"
+							BorderThickness="2"
+					        CornerRadius="9"
+					        BorderBrush="Black">
 						<Grid ShowGridLines="False">
-							<Grid.ColumnDefinitions>
+							<Grid.ColumnDefinitions >
 								<ColumnDefinition Width="0.1*" />
 								<ColumnDefinition Width="0.3*" />
 								<ColumnDefinition Width="0.088*" />
@@ -55,25 +84,41 @@
 								<RowDefinition Height="Auto"></RowDefinition>
 								<RowDefinition Height="Auto"></RowDefinition>
 							</Grid.RowDefinitions>
-							
+
 							<Image VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0"
 								   Width="150" Height="250" Source="{Binding image}"></Image>
 							<TextBlock Text="Название:" HorizontalAlignment="Left" FontWeight="Black"
 									   VerticalAlignment="Top" Grid.Column="1"/>
-							<TextBlock Text="{Binding ProductName}" HorizontalAlignment="Center" 
+							<TextBlock Text="{Binding ProductName}" HorizontalAlignment="Center"
 									   VerticalAlignment="Top" Grid.Column="1"/>
-							<TextBlock Text="Цена:"  HorizontalAlignment="Right" Margin="0 0 0 0" FontWeight="Black"
-									   VerticalAlignment="Top" Grid.Column="1"/>						
-							<TextBlock Text="{Binding PraiseProduct}" HorizontalAlignment="Left" Margin="0 1 0 0"
-									   VerticalAlignment="Top" Grid.Column="2" TextWrapping="Wrap"/>
-							<Button Background="#CC5801" Tag="{Binding Id}" HorizontalAlignment="Center" Margin="0 20 0 65" Height="30" Width="150"
-									   VerticalAlignment="Center"	Grid.Column="2" Click="basket" Name="basket" Classes="inkorzB">
+							<TextBlock Text="Количество:" HorizontalAlignment="Left" FontWeight="Black"
+							           VerticalAlignment="Center" Margin="0 0 0 120" Grid.Column="1"/>
+							<TextBlock Text="{Binding ColvoProduct}" HorizontalAlignment="Center"
+							           VerticalAlignment="Center" Grid.Column="1"  Margin="0 0 0 120" />
+							<TextBlock Text="Цена:"  HorizontalAlignment="Left" Margin="0 0 0 80" FontWeight="Black"
+									   VerticalAlignment="Center" Grid.Column="1"/>
+							<TextBlock Text="{Binding PraiseProduct}" Margin="0 0 0 80" HorizontalAlignment="Center"
+							           VerticalAlignment="Center" Grid.Column="1" TextWrapping="Wrap"/>
+							<TextBlock Text="Организация:"  HorizontalAlignment="Left" Margin="0 0 0 40" FontWeight="Black"
+							           VerticalAlignment="Center" Grid.Column="1"/>
+							<TextBlock Text="{Binding OrganaizProduct}" Margin="0 0 0 40" HorizontalAlignment="Center"
+							           VerticalAlignment="Center" Grid.Column="1" TextWrapping="Wrap"/>
+							<TextBlock Text="Тип продукта:"  HorizontalAlignment="Left" Margin="0 0 0 5" FontWeight="Black"
+							           VerticalAlignment="Center" Grid.Column="1"/>
+							<TextBlock Text="{Binding TypeProduct}" Margin="0 0 0 0" HorizontalAlignment="Center"
+							           VerticalAlignment="Center" Grid.Column="1" TextWrapping="Wrap"/>
+							<TextBlock Text="Описание:"  HorizontalAlignment="Left" Margin="0 35 0 0" FontWeight="Black"
+							           VerticalAlignment="Center" Grid.Column="1"/>
+							<TextBlock Text="{Binding OpisanieProduct}" Width="350" Height="75" Margin="0 95 0 0" HorizontalAlignment="Center"
+							           VerticalAlignment="Center" Grid.Column="1" TextWrapping="Wrap"/>
+							<Button Background="#CC5801" Tag="{Binding Id}" HorizontalAlignment="Center" Margin="0 0 0 65" Height="30" Width="150"
+									   VerticalAlignment="Center"	Grid.Column="2" Click="basket" Name="basket" Classes="Orange_button">
 								<TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White">В корзину</TextBlock>
 							</Button>
-						</Grid>
+						</Grid >
 					</Border>
 				</DataTemplate>
 			</ListBox.ItemTemplate>
 		</ListBox>
-		</Panel>
+	</Panel>
 </Window>

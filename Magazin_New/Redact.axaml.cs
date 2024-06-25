@@ -18,9 +18,12 @@ public partial class Redact : Window
         InitializeComponent();
         Otmen.Click += Click_Otmen;
         redaktirovat.Click += Redaktirovat_Click;
-
+        colvo.Text = Convert.ToString(ShopTab.SaveMagaz.Product[ShopTab.massiv[0]].ColvoProduct);
         prise.Text = Convert.ToString(ShopTab.SaveMagaz.Product[ShopTab.massiv[0]].PraiseProduct);
+        TypeVibor.Text = Convert.ToString(ShopTab.SaveMagaz.Product[ShopTab.massiv[0]].OrganaizProduct);
+        opisanie.Text = Convert.ToString(ShopTab.SaveMagaz.Product[ShopTab.massiv[0]].OpisanieProduct);
         name.Text = ShopTab.SaveMagaz.Product[ShopTab.massiv[0]].ProductName;
+        TypeVibor2.Text = Convert.ToString(ShopTab.SaveMagaz.Product[ShopTab.massiv[0]].TypeProduct);
         SelectedImage = ShopTab.SaveMagaz.Product[ShopTab.massiv[0]].Sourse;
         if (SelectedImage != null)
         {
@@ -35,17 +38,77 @@ public partial class Redact : Window
     string SelectedImage;
     private void ssil()
     {
-        ShopTab.SaveMagaz.Product.Select(x => new {x.image, x.ProductName, x.PraiseProduct, x.Id});
+        ShopTab.SaveMagaz.Product.Select(x => new { x.image, x.ProductName, x.PraiseProduct, x.Id , x.ColvoProduct, x.OrganaizProduct, x.OpisanieProduct, x.TypeProduct});
     }
     private void Redaktirovat_Click(object? sender, RoutedEventArgs e)
     {
+        int Index =ShopTab.SaveMagaz.Product[ShopTab.massiv[0]].Id;
+        int i = 0;
+        foreach (Product product in ShopTab.SaveMagaz.Product)
+        {
+            if (ShopTab.SaveMagaz.Product.IndexOf(product) != Index && product.ProductName == name.Text)
+            {
+                i++;
+            }   
+        }
+        
+        string III = " ";
+            switch (strok.SelectedIndex)
+            {
+                case 0:
+                    III = TypeVibor.Text;
+                    break;
+                case 1:
+                    III = "ООО 'Олимп'";
+                    break;
+                case 2:
+                    III = "ООО 'Поклоняемся Солнцу!'";
+                    break;
+                case 3:
+                    III = "ООО 'Венера'";
+                    break;
+                case 4:
+                    III = "ООО 'ЯщеркиТехКорп'";
+                    break;
+            }
+        string IV = " ";
+            switch (strok2.SelectedIndex)
+            {
+                case 0:
+                    IV = TypeVibor2.Text;
+                    break;
+                case 1:
+                    IV = "Техника";
+                    break;
+                case 2:
+                    IV = "Одежда";
+                    break;
+                case 3:
+                    IV = "Продукты";
+                    break;
+                case 4:
+                    IV = "Канцелярия";
+                    break;
+            }
         ShopTab.SaveMagaz.Product[ShopTab.massiv[0]].Sourse = SelectedImage;
         ShopTab.SaveMagaz.Product[ShopTab.massiv[0]].ProductName = name.Text;
         ShopTab.SaveMagaz.Product[ShopTab.massiv[0]].PraiseProduct = Convert.ToDouble(prise.Text);
-        
-        admin taskWindow = new admin();
-        taskWindow.Show();
-        this.Close();
+        ShopTab.SaveMagaz.Product[ShopTab.massiv[0]].ColvoProduct = Convert.ToInt32(colvo.Text);
+        ShopTab.SaveMagaz.Product[ShopTab.massiv[0]].OrganaizProduct = III;
+        ShopTab.SaveMagaz.Product[ShopTab.massiv[0]].TypeProduct = IV;
+        ShopTab.SaveMagaz.Product[ShopTab.massiv[0]].OpisanieProduct = opisanie.Text;
+
+        if (i==0)
+        {
+            admin taskWindow = new admin();
+            taskWindow.Show();
+            this.Close();   
+        }
+        else if(i>0)
+        {
+            error4 taskWindow = new error4();
+            taskWindow.Show();
+        }
     }
     private readonly FileDialogFilter fileFilter = new()
     {

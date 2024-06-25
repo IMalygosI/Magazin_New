@@ -13,36 +13,48 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Magazin_New
-build_property.ProjectDir = C:\Users\PROFI\source\repos\Magazin_New\Magazin_New\
+build_property.ProjectDir = C:\Users\prdb\Desktop\Magazin_New\Magazin_New\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 
-[C:/Users/PROFI/source/repos/Magazin_New/Magazin_New/admin.axaml]
+[C:/Users/prdb/Desktop/Magazin_New/Magazin_New/admin.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/PROFI/source/repos/Magazin_New/Magazin_New/App.axaml]
+[C:/Users/prdb/Desktop/Magazin_New/Magazin_New/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/PROFI/source/repos/Magazin_New/Magazin_New/bagodarim.axaml]
+[C:/Users/prdb/Desktop/Magazin_New/Magazin_New/bagodarim.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/PROFI/source/repos/Magazin_New/Magazin_New/basket.axaml]
+[C:/Users/prdb/Desktop/Magazin_New/Magazin_New/basket.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/PROFI/source/repos/Magazin_New/Magazin_New/Dobavit.axaml]
+[C:/Users/prdb/Desktop/Magazin_New/Magazin_New/Dobavit.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/PROFI/source/repos/Magazin_New/Magazin_New/error.axaml]
+[C:/Users/prdb/Desktop/Magazin_New/Magazin_New/error.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/PROFI/source/repos/Magazin_New/Magazin_New/error2.axaml]
+[C:/Users/prdb/Desktop/Magazin_New/Magazin_New/error2.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/PROFI/source/repos/Magazin_New/Magazin_New/MainWindow.axaml]
+[C:/Users/prdb/Desktop/Magazin_New/Magazin_New/error3.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/PROFI/source/repos/Magazin_New/Magazin_New/Redact.axaml]
+[C:/Users/prdb/Desktop/Magazin_New/Magazin_New/error4.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/PROFI/source/repos/Magazin_New/Magazin_New/user.axaml]
+[C:/Users/prdb/Desktop/Magazin_New/Magazin_New/guest.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[C:/Users/prdb/Desktop/Magazin_New/Magazin_New/MainWindow.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[C:/Users/prdb/Desktop/Magazin_New/Magazin_New/poickovoe.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[C:/Users/prdb/Desktop/Magazin_New/Magazin_New/Redact.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[C:/Users/prdb/Desktop/Magazin_New/Magazin_New/user.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml

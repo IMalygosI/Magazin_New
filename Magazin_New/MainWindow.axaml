@@ -16,7 +16,7 @@
                 Sign in
             </TextBlock>
         </StackPanel>
-        <Border Background="#CC5801" Height="255" Width="300" HorizontalAlignment="Center"
+        <Border Background="#CC5801" Height="290" Width="300" HorizontalAlignment="Center"
                 VerticalAlignment="Center" CornerRadius="11"
                 Margin="0 0 0 0" >
             <StackPanel>
@@ -28,10 +28,16 @@
 
                 <TextBox Name="parol" Watermark="Password" Text="" PasswordChar="*"  Background="White" Height="30" Width="280" CornerRadius="6" Margin="0 10 0 0"></TextBox>
 
-                <Button Name="sign" Foreground="White" Background="Gray" Height="40" Width="280" Classes="sign1"
-                        Margin="0 25 0 0" HorizontalAlignment="Center" CornerRadius="11">
+                <Button Name="sign" Foreground="White" Background="Gray" Height="40" Width="280" Classes="Gray_button"
+                        Margin="0 15 0 0" HorizontalAlignment="Center" CornerRadius="11">
                     <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White">
                         Sign in
+                    </TextBlock>
+                </Button>
+                <Button Name="guest" Foreground="White" Background="Gray" Height="40" Width="280" Classes="Gray_button"
+                        Margin="0 15 0 0" HorizontalAlignment="Center" CornerRadius="11">
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White">
+                        Login as a guest
                     </TextBlock>
                 </Button>
             </StackPanel>

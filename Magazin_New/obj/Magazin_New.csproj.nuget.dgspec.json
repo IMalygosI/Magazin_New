@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\PROFI\\source\\repos\\Magazin_New\\Magazin_New\\Magazin_New.csproj": {}
+    "C:\\Users\\prdb\\Desktop\\Magazin_New\\Magazin_New\\Magazin_New.csproj": {}
   },
   "projects": {
-    "C:\\Users\\PROFI\\source\\repos\\Magazin_New\\Magazin_New\\Magazin_New.csproj": {
+    "C:\\Users\\prdb\\Desktop\\Magazin_New\\Magazin_New\\Magazin_New.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\PROFI\\source\\repos\\Magazin_New\\Magazin_New\\Magazin_New.csproj",
+        "projectUniqueName": "C:\\Users\\prdb\\Desktop\\Magazin_New\\Magazin_New\\Magazin_New.csproj",
         "projectName": "Magazin_New",
-        "projectPath": "C:\\Users\\PROFI\\source\\repos\\Magazin_New\\Magazin_New\\Magazin_New.csproj",
-        "packagesPath": "C:\\Users\\PROFI\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\PROFI\\source\\repos\\Magazin_New\\Magazin_New\\obj\\",
+        "projectPath": "C:\\Users\\prdb\\Desktop\\Magazin_New\\Magazin_New\\Magazin_New.csproj",
+        "packagesPath": "C:\\Users\\prdb\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\prdb\\Desktop\\Magazin_New\\Magazin_New\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\PROFI\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\prdb\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -43,6 +43,14 @@
             "Avalonia": {
               "target": "Package",
               "version": "[11.0.10, )"
+            },
+            "Avalonia.Angle.Windows.Natives": {
+              "target": "Package",
+              "version": "[2.1.0.2023020321, )"
+            },
+            "Avalonia.BuildServices": {
+              "target": "Package",
+              "version": "[0.0.29, )"
             },
             "Avalonia.Desktop": {
               "target": "Package",
@@ -77,7 +85,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.203/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

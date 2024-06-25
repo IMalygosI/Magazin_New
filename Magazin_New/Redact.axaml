@@ -20,51 +20,75 @@
 			</ExperimentalAcrylicBorder.Material>
 		</ExperimentalAcrylicBorder>
 		
-		
 		<Image Width="205" Height="205" Name="img_preview" Margin="540 0 0 20" IsVisible="True"
 		       Source="./Assets/zagluska.jpg">
 		</Image>
 		
-		<Panel Margin="0 0 520 0" HorizontalAlignment="Center" VerticalAlignment="Center">
-			<TextBlock Width="200" Height="30" Foreground="White" FontSize="21" Margin="85 0 0 29" Text="Цена продукта:">
-			</TextBlock>
-			<TextBlock Width="210" Height="30" Foreground="White" FontSize="21" Margin="0 90 0 27" Text="Название продукта:">
-			</TextBlock>
-		</Panel>
-		<TextBlock Width="200" Height="20" Foreground="White" Margin="0 225 100 0" Text="Название файла:">
+		<TextBlock Width="200" Height="20" Foreground="White" Margin="0 385 100 0" Text="Название файла:">
 		</TextBlock>
-		<TextBlock IsVisible="False" Width="170" Height="20" Foreground="White" Name="tblock_preview" Margin="110 225 0 0">
+		<TextBlock IsVisible="False" Width="170" Height="20" Foreground="White" Name="tblock_preview" Margin="110 315 0 0">
 		</TextBlock>
 		
-		<Button Name="btn_imgAdd" Click="ImageSelection" Margin="0 0 0 210" Width="300" Height="40"
+		<Button Name="btn_imgAdd" Click="ImageSelection" Margin="0 0 0 300" Width="300" Height="40"
 		        HorizontalAlignment="Center" VerticalAlignment="Center" Classes="Postavka">
 			<TextBlock Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="21">
 				Добавить картинку
 			</TextBlock>
 		</Button>
-		<Button Name="btn_imgDel" Click="ImageSelection" Margin="0 0 0 120" Width="300" Height="40"
+		<Button Name="btn_imgDel" Click="ImageSelection" Margin="0 0 0 210" Width="300" Height="40"
 		        HorizontalAlignment="Center" VerticalAlignment="Center" Classes="Otmen1">
 			<TextBlock Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="21">
 				Удалить картинку
 			</TextBlock>
 		</Button>
-		<Button Name="Otmen" Classes="Otmen1" Margin="177 150 0 0" Width="120" Height="40"
+		<Button Name="Otmen" Classes="Otmen1" Margin="177 315 0 0" Width="120" Height="40"
 		HorizontalAlignment="Center" VerticalAlignment="Center">
 			<TextBlock Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="21">
 				Отмена
 			</TextBlock>
 		</Button>
-		<Button Name="redaktirovat" Classes="Postavka" Margin="0 150 125 0" Width="175" Height="40"
+		<Button Name="redaktirovat" Classes="Postavka" Margin="0 315 125 0" Width="175" Height="40"
                 HorizontalAlignment="Center" VerticalAlignment="Center">
 			<TextBlock Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="21">
 				Принять
 			</TextBlock>
 		</Button>
+		<ComboBox HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 145 0 0"
+		          Width="300" Height="40" Name="strok2" SelectedIndex="0">
+			<ComboBoxItem FontSize="20">
+				<TextBlock Name="TypeVibor2" Text="" >
+				</TextBlock>
+			</ComboBoxItem>
+			<ComboBoxItem FontSize="20">Техника</ComboBoxItem>
+			<ComboBoxItem FontSize="20">Одежда</ComboBoxItem>
+			<ComboBoxItem FontSize="20">Продукты</ComboBoxItem>
+			<ComboBoxItem FontSize="20">Канцелярия</ComboBoxItem>
+		</ComboBox>
+		
+		
+		<ComboBox HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 230 0 0"
+		          Width="300" Height="40" Name="strok" SelectedIndex="0">
+			<ComboBoxItem FontSize="20">
+				<TextBlock Name="TypeVibor" Text="" >
+				</TextBlock>
+			</ComboBoxItem>
+			<ComboBoxItem FontSize="20">ООО 'Олимп'</ComboBoxItem>
+			<ComboBoxItem FontSize="20">ООО 'Поклоняемся Солнцу!'</ComboBoxItem>
+			<ComboBoxItem FontSize="20">ООО 'Венера'</ComboBoxItem>
+			<ComboBoxItem FontSize="20">ООО 'ЯщеркиТехКорп'</ComboBoxItem>
+		</ComboBox>
+		
+		<TextBox Name="opisanie" Width="300" Height="214" Margin="0 55 620 0"
+		         Watermark="Описание продукта" Text="" TextWrapping="Wrap"
+		         HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="17"></TextBox>
+		<TextBox Name="colvo" Width="300" Height="40" Margin="0 0 0 120"
+		         Watermark="Количество" Text=""
+		         HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="21"></TextBox>
 		<TextBox Name="prise" Width="300" Height="40" Margin="0 0 0 30"
-				 Watermark="Цена" Text=""
-				 HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="21"></TextBox>
+		         Watermark="Цена"
+		         HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="21"></TextBox>
 		<TextBox Name="name" Width="300" Height="40" Margin="0 60 0 0"
-				 Watermark="Название товара" Text=""
-				 HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="21"></TextBox>
+		         Watermark="Название товара"
+		         HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="21"></TextBox>
 	</Panel>
 </Window>

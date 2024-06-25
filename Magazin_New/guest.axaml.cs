@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using Avalonia;
 using Avalonia.Controls;
@@ -8,9 +10,9 @@ using Magaz;
 
 namespace Magazin_New;
 
-public partial class user : Window
+public partial class guest : Window
 {
-    public user()
+    public guest()
     {
         InitializeComponent();
 
@@ -31,6 +33,7 @@ public partial class user : Window
         LBoxInitialization(ShopTab.SaveMagaz.Product);
         ssil("");
     }
+    
     private void ResetSort(object sender, RoutedEventArgs e)
     {
         sotirovka.SelectedIndex = 0;
@@ -248,43 +251,10 @@ public partial class user : Window
             Color = x.ColvoProduct > 0 ? "CenterScreen" : "Gray"
         }).ToList();
     }
-    public void basket(object sender, RoutedEventArgs args)
-    {
-        if (ShopTab.SaveMagaz.Product.Count > 0)
-        {
-            int productIndex = (int)(sender as Button)!.Tag!;
-
-            int count = ShopTab.SaveMagaz.Product[productIndex].ColvoProduct;
-            if (count > 0)
-            {
-                ShopTab.SaveMagaz.Product[productIndex].ColvoProduct = count - 1;
-
-                var productInBasket = ShopTab.SaveMagaz.korzinaa.FirstOrDefault(p => p.Id == productIndex);
-                if (productInBasket != null)
-                {
-                    productInBasket.ColvoProduct += 1;
-                }
-                else
-                {
-                    var newProduct = ShopTab.SaveMagaz.Product[productIndex].Clone();
-                    newProduct.ColvoProduct = 1;
-                    ShopTab.SaveMagaz.korzinaa.Add(newProduct);
-                }
-            }
-            for (int i = 0; i < ShopTab.SaveMagaz.Product.Count; i++)
-            {
-                ShopTab.SaveMagaz.Product[i].Id = i;
-            }
-            AAA.ItemsSource = ShopTab.SaveMagaz.Product.ToList();
-        }
-        ssil("");
-        FiltersTogether();
-    }
     public void Click_korz(object sender, RoutedEventArgs args)
     {
-        basket taskWindow = new basket();
+        error3 taskWindow = new error3();
         taskWindow.Show();
-        this.Close();
     }
     public void Click_exit(object sender, RoutedEventArgs args)
     {
