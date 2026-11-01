@@ -1,4 +1,4 @@
-<div align="center"> Учебный проект </div>
+<div align="center"> Учебный проект\n </div>
 
 
 В ветке master находится старый магазин. 
